@@ -75,7 +75,7 @@ export default function ImageCarousel(props) {
         style={styles.carousel}
         data={data}
         renderItem={renderItem}
-        itemWidth={windowWidth * 0.5}
+        itemWidth={windowWidth * 0.6}
         separatorWidth={0}
         containerWidth={windowWidth}
         onScrollEnd={handleCarouselScrollEnd}
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     flexGrow: 0,
     marginTop:'-6px',
     paddingStart:'10px',
-    paddingEnd:'10px',    
+    paddingEnd:'10px',      
   },
   item: {
     borderWidth: 2,
@@ -108,7 +108,6 @@ const styles = StyleSheet.create({
     borderColor:'#38B252',
     justifyContent: 'center',
     alignItems: 'center',
-    width:'250px'
 
   },
   imageBackground: {

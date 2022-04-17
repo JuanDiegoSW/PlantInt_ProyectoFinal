@@ -7,6 +7,7 @@ import mivideo from "./mivideo.mp4";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import database from "../database";
 import ImageCarousel from "./imagenCarusel";
+import TiendaCarousel from "./tiendaCarusel";
 
 
 const TabHome = ({navigation}) =>{
@@ -26,8 +27,17 @@ const TabHome = ({navigation}) =>{
         
         <SafeAreaView style={styles.container}>
           <ImageCarousel/>
-          </SafeAreaView>
+        </SafeAreaView>
+        <View style={styles.viewText}>
+        <Text style={styles.textPlantasPopulares}>Plantas populares</Text>
+        <TouchableOpacity>
+        <Text style={styles.textVerTodo}>Ver todo</Text>
+        </TouchableOpacity>
+        </View>
         
+        <SafeAreaView style={styles.container}>
+          <TiendaCarousel/>
+        </SafeAreaView>
       </>
   );
 }
