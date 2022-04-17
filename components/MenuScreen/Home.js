@@ -1,11 +1,13 @@
 import React from "react"
-import {View, Text, StyleSheet,SafeAreaView,FlatList,TouchableOpacity, Image,TextInput, Button} from "react-native"
+import {View, Text, StyleSheet,SafeAreaView,FlatList,TouchableOpacity, Image,Dimensions, Button} from "react-native"
 import { Ionicons } from '@expo/vector-icons';
 import { NavigationContainer } from '@react-navigation/native';
 import { Video } from 'expo-av';
 import mivideo from "./mivideo.mp4";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import database from "../database";
+import ImageCarousel from "./imagenCarusel";
+
 
 const TabHome = ({navigation}) =>{
     
@@ -23,18 +25,7 @@ const TabHome = ({navigation}) =>{
         </View>
         
         <SafeAreaView style={styles.container}>
-          <FlatList
-            data={database}
-            keyExtractor={item=> item.id}
-            ItemSeparatorComponent={separator}
-            renderItem= {({item})=>(
-                <TouchableOpacity style={styles.contenedor} onPress={()=>cambiazo(item)}>
-                  <Item title={item.title} desc={item.description} imagen={item.imagen} style={styles.item} />
-                </TouchableOpacity>
-                
-              )
-            }
-          />
+          <ImageCarousel/>
           </SafeAreaView>
         
       </>
@@ -187,12 +178,7 @@ const Item = ({ title,desc, imagen }) => (
     </View>
   </View>
 );
-const separator = () =>{
-  return(
-    <View style={styles.separator}>
-    </View>
-  )
-}
+
 const HomeScreen = () =>{
     const cambiazo = (item) => {
         navigation.navigate("Details",{item: item})
@@ -304,11 +290,6 @@ const HomeScreen = () =>{
     description: {
       fontSize: 13,
       marginStart: 10
-    },
-    separator:{
-      height:1,
-      width:"100%",
-      backgroundColor: 'black'
     },
     text:{
       
