@@ -60,6 +60,8 @@ export default function ImageCarousel(props) {
         <ImageBackground source={{uri: uri}} style={styles.imageBackground}>
          
         </ImageBackground>
+
+        
         <View style={styles.lowerContainer}>
           <Text style={styles.titleText}>{title}</Text>
         </View>
@@ -73,7 +75,8 @@ export default function ImageCarousel(props) {
         style={styles.carousel}
         data={data}
         renderItem={renderItem}
-        itemWidth={0.6 * windowWidth}
+        itemWidth={windowWidth * 0.5}
+        separatorWidth={0}
         containerWidth={windowWidth}
         onScrollEnd={handleCarouselScrollEnd}
         ref={carouselRef}
@@ -84,28 +87,39 @@ export default function ImageCarousel(props) {
 }
 
 const styles = StyleSheet.create({
-  container: {backgroundColor: '#white', paddingVertical: 20},
+
   carousel: {
     backgroundColor: 'white',
     aspectRatio: 1.5,
     flexGrow: 0,
-    marginBottom: 20,
+    marginTop:'-6px',
+    paddingStart:'10px',
+    paddingEnd:'10px',    
   },
   item: {
     borderWidth: 2,
-    backgroundColor: 'white',
+    paddingTop:'10px',
+    backgroundColor: '#C4F8CF',
     flex: 2,
-    borderRadius: 5,
-    borderColor: 'white',
+    borderRadius: 30,
+    alignContent:'center',
     elevation: 3,
+    borderWidth: 1,
+    borderColor:'#38B252',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width:'250px'
+
   },
   imageBackground: {
-    flex: 1,
-    backgroundColor: '#EBEBEB',
+    
+    width:'80px',
+    height:'80px',
+    justifyContent: "center",    
+    backgroundColor: '#C4F8CF',
     borderWidth: 1,
     borderColor: '#0FA958',
   },
-  rightText: {color: 'white'},
   lowerContainer: {
     flex: 2,
     margin: 10,
