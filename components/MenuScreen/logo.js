@@ -1,27 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
-import {
-  useFonts,
-  Marvel_400Regular,
-  Marvel_700Bold,
-} from "@expo-google-fonts/marvel";
 import { Caveat_600SemiBold, Caveat_700Bold } from "@expo-google-fonts/caveat";
-import { Button } from "react-native-web";
+
 
 const Logo = ({ main }) => {
-  let [fontsLoaded] = useFonts({
-    Marvel_400Regular,
-    Marvel_700Bold,
-    Caveat_600SemiBold,
-    Caveat_700Bold,
-  });
-  console.log(main);
-
-  if (!fontsLoaded) {
-    return <Text>Hola</Text>;
-  } else {
+ 
+  
     return (
       <View style={{ flexDirection: "row", margin: 0 }}>
         {
@@ -44,7 +29,7 @@ const Logo = ({ main }) => {
         }
       </View>
     );
-  }
+  
 };
 const styles = StyleSheet.create({
   text: {

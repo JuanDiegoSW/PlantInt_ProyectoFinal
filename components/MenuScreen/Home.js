@@ -17,7 +17,9 @@ const TabHome = ({navigation}) =>{
     <>
         <View style={styles.viewText}>
         <Text style={styles.textPlantasPopulares}>Plantas populares</Text>
+        <TouchableOpacity>
         <Text style={styles.textVerTodo}>Ver todo</Text>
+        </TouchableOpacity>
         </View>
         
         <SafeAreaView style={styles.container}>
