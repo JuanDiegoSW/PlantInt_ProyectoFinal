@@ -15,6 +15,11 @@ const TabHome = ({navigation}) =>{
         }
     return (
     <>
+        <View style={styles.viewText}>
+        <Text style={styles.textPlantasPopulares}>Plantas populares</Text>
+        <Text style={styles.textVerTodo}>Ver todo</Text>
+        </View>
+        
         <SafeAreaView style={styles.container}>
           <FlatList
             data={database}
@@ -241,11 +246,29 @@ const HomeScreen = () =>{
 
   const styles = StyleSheet.create({
     
-    contenedor: {
+    container: {
       paddingBottom: 5,
       paddingTop: 5,
       margin: 1,
       fontSize: 222,
+    },
+    textPlantasPopulares:{
+      fontSize: 22,
+      marginStart: 10,
+      justifyContent: 'center'
+    },
+    textVerTodo:{
+      fontSize: 22,
+      marginStart: '210px',
+      justifyContent: 'center',
+      color:'#0FA958',
+      textDecorationLine: 'underline'
+    },
+    viewText:{
+      flexDirection: "row", 
+      margin: 0,
+      backgroundColor: 'white',
+      padding: '10px',
     },
     imagen: {
       width:80,
